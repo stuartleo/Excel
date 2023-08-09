@@ -1,0 +1,7 @@
+# day
+=MIN(J6:J1500)
+# evening
+=MIN(K6:K1500)
+# night
+=MIN(L6:L1500)
+

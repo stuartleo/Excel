@@ -1,0 +1,2 @@
+= IF( ISERROR( IF( D6= "", "", ( IF( G6= 1, ( AVERAGEIFS( E6:E150, G6:G150, 1, H6:H150, "Evening" )), "" )))), "",( IF( D6= "", "", ( IF( G6= 1, ( AVERAGEIFS( E6:E150, G6:G150, 1, H6:H150, "Evening" )), "" )))))
+= IF( ISERROR( IF( D7= "", "", ( IF( G7= (G6+1), ( AVERAGEIFS( E7:E151, G7:G151, G7, H7:H151, "Evening" )), "" )))), "",( IF( D7= "", "", ( IF( G7= (G6+1), ( AVERAGEIFS( E7:E151, G7:G151, G7, H7:H151, "Evening" )), "" )))))

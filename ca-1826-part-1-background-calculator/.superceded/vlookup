@@ -1,0 +1,13 @@
+=
+IF(
+	ISERROR(
+		VLOOKUP(
+			1,
+			'FromSvanPC++'!A1: 'From SvanPC++'!F108,
+			MATCH(
+			"No.",
+			'FromSvanPC++'!A5: 'From SvanPC++'!G5,
+			0
+			),
+			0
+			)))

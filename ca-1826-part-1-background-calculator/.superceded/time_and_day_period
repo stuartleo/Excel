@@ -1,0 +1,210 @@
+=
+IF(
+	F6=
+	"",
+	"",
+	(
+	IF(
+		AND(
+			F6 >=
+			TIMEVALUE(
+			"07:00:00"
+			),
+			F6 <=
+			TIMEVALUE(
+			"12:59:59"
+			),
+				WEEKDAY(
+				E6)
+				=(7+N("Lines 2-17 = saturday day period"))
+			) =
+			TRUE,
+			"Day"
+		,
+	IF(
+		AND(
+			F6 >=
+			TIMEVALUE(
+			"07:00:00"
+			),
+			F6 <=
+			TIMEVALUE(
+			"17:59:59"
+			),
+				WEEKDAY(
+				E6,1+N("Lines 19-38 = weekday day period"))
+				>=2,
+				(
+				WEEKDAY(
+				E6,1)
+				<=6)
+			) =
+			TRUE,
+			"Day"
+		,
+	IF(
+		AND(
+			F6 >=
+			TIMEVALUE(
+			"13:00:00"
+			),
+			F6 <=
+			TIMEVALUE(
+			"21:59:59"
+			),
+				WEEKDAY(
+				E6)
+				=(7+N("Lines 40-56 = saturday evening period"))
+			) =
+			TRUE,
+			"Evening"
+		,
+	IF(
+		AND(
+			F6 >=
+			TIMEVALUE(
+			"18:00:00"
+			),
+			F6 <=
+			TIMEVALUE(
+			"21:59:59"
+			),
+				WEEKDAY(
+				E6,1+N("Lines 57-77 = weekday evening period"))
+				>=2,
+				(
+				WEEKDAY(
+				E6,1)
+				<=6)
+			) =
+			TRUE,
+			"Evening"
+		,
+	IF(
+		AND(
+			F6 >=
+			TIMEVALUE(
+			"07:00:00"
+			),
+			F6 <=
+			TIMEVALUE(
+			"21:59:59"
+			),
+				WEEKDAY(
+				E6)
+				=(1+N("Lines 78-94 = sunday evening period"))
+			) =
+			TRUE,
+			"Evening"
+		,
+	IF(
+		AND(
+			F6 >=
+			TIMEVALUE(
+			"22:00:00"
+			),
+			F6 <=
+			TIMEVALUE(
+			"23:59:59"
+			),
+				WEEKDAY(
+				E6)
+				=(7+N("Lines 95-111 = saturday night1 period"))
+			) =
+			TRUE,
+			"Night"
+		,
+	IF(
+		AND(
+			F6 >=
+			TIMEVALUE(
+			"00:00:00"
+			),
+			F6 <=
+			TIMEVALUE(
+			"06:59:59"
+			),
+				WEEKDAY(
+				E6)
+				=(7+N("Lines 112-128 = saturday night2 period"))
+			) =
+			TRUE,
+			"Night"
+		,
+	IF(
+		AND(
+			F6 >=
+			TIMEVALUE(
+			"22:00:00"
+			),
+			F6 <=
+			TIMEVALUE(
+			"23:59:59"
+			),
+				WEEKDAY(
+				E6,1+N("Lines 129-149 = weekday night1 period"))
+				>=2,
+				(
+				WEEKDAY(
+				E6,1)
+				<=6)
+			) =
+			TRUE,
+			"Night"
+		,
+	IF(
+		AND(
+			F6 >=
+			TIMEVALUE(
+			"00:00:00"
+			),
+			F6 <=
+			TIMEVALUE(
+			"06:59:59"
+			),
+				WEEKDAY(
+				E6,1+N("Lines 150-170 = weekday night2 period"))
+				>=2,
+				(
+				WEEKDAY(
+				E6,1)
+				<=6)
+			) =
+			TRUE,
+			"Night"
+		,
+	IF(
+		AND(
+			F6 >=
+			TIMEVALUE(
+			"22:00:00"
+			),
+			F6 <=
+			TIMEVALUE(
+			"23:59:59"
+			),
+				WEEKDAY(
+				E6)
+				=(1+N("Lines 171-187 = sunday night1 period"))
+			) =
+			TRUE,
+			"Night"
+		,
+	IF(
+		AND(
+			F6 >=
+			TIMEVALUE(
+			"00:00:00"
+			),
+			F6 <=
+			TIMEVALUE(
+			"06:59:59"
+			),
+				WEEKDAY(
+				E6)
+				=(1+N("Lines 188-204 = sunday night2 period"))
+			) =
+			TRUE,
+			"Night"
+		,
+	)))))))))))))
