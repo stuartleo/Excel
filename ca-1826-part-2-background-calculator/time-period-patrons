@@ -1,0 +1,22 @@
+#
+# Works, but should be simplified
+#----------------------------------------
+
+= IF( D6= "", "", ( 
+
+IF( AND( D6 >= TIMEVALUE( "07:00:01" ), D6 <= TIMEVALUE( "18:00:00" ), WEEKDAY( C6,1+N("            Weekday Day Period              ")) >=2, ( WEEKDAY( C6,1) <=6) ) = TRUE, "Day",
+IF( AND( D6 >= TIMEVALUE( "18:00:01" ), D6 <= TIMEVALUE( "22:00:00" ), WEEKDAY( C6,1+N("            Weekday Evening Period          ")) >=2, ( WEEKDAY( C6,1) <=6) ) = TRUE, "Evening",
+IF( AND( D6 >= TIMEVALUE( "22:00:01" ), D6 <= TIMEVALUE( "23:59:59" ), WEEKDAY( C6,1+N("            Weekday Night Period            ")) >=2, ( WEEKDAY( C6,1) <=6) ) = TRUE, "Night",
+IF( AND( D6 >= TIMEVALUE( "00:00:00" ), D6 <= TIMEVALUE( "07:00:00" ), WEEKDAY( C6,1+N("            Weekday Night Period            ")) >=2, ( WEEKDAY( C6,1) <=6) ) = TRUE, "Night",
+
+IF( AND( D6 >= TIMEVALUE( "07:00:01" ), D6 <= TIMEVALUE( "18:00:00" ), WEEKDAY( C6) =(7+N("         Saturday Day Period             ")) ) = TRUE, "Day",
+IF( AND( D6 >= TIMEVALUE( "18:00:01" ), D6 <= TIMEVALUE( "22:00:00" ), WEEKDAY( C6) =(7+N("         Saturday Evening Period         ")) ) = TRUE, "Evening",
+IF( AND( D6 >= TIMEVALUE( "22:00:01" ), D6 <= TIMEVALUE( "23:59:59" ), WEEKDAY( C6) =(7+N("         Saturday Night Period           ")) ) = TRUE, "Night",
+IF( AND( D6 >= TIMEVALUE( "00:00:00" ), D6 <= TIMEVALUE( "07:00:00" ), WEEKDAY( C6) =(7+N("         Saturday Night Period           ")) ) = TRUE, "Night",
+
+IF( AND( D6 >= TIMEVALUE( "07:00:01" ), D6 <= TIMEVALUE( "18:00:00" ), WEEKDAY( C6) =(1+N("         Sunday Day Period               ")) ) = TRUE, "Day",
+IF( AND( D6 >= TIMEVALUE( "18:00:01" ), D6 <= TIMEVALUE( "22:00:00" ), WEEKDAY( C6) =(1+N("         Sunday Evening Period           ")) ) = TRUE, "Evening",
+IF( AND( D6 >= TIMEVALUE( "20:00:01" ), D6 <= TIMEVALUE( "23:59:59" ), WEEKDAY( C6) =(1+N("         Sunday Night Period             ")) ) = TRUE, "Night",
+IF( AND( D6 >= TIMEVALUE( "00:00:00" ), D6 <= TIMEVALUE( "07:00:00" ), WEEKDAY( C6) =(1+N("         Sunday Night Period             ")) ) = TRUE, "Night", 
+
+))))))))))))))
